@@ -1,0 +1,35 @@
+
+\paragraph{
+  Enkonduko pri Picasso.
+}
+
+\code{
+  \declare{praepoko}
+  \declare{mezepoko}
+  \declare{modernepoko}
+
+  \set{unuaDemando}{}
+}
+
+\paragraph{
+  En kiu epoko li vivis?
+  \alternative{
+    praepoko
+    \code{\apply{unuaDemando}{+praepoko}},
+    mezepoko
+    \code{\apply{unuaDemando}{+mezepoko}},
+    moderna epoko
+    \code{\apply{unuaDemando}{+modernepoko}}
+  }
+}
+
+\information{
+  \code{
+    \translate{praepoko}{Ho ve, …}
+    \translate{mezepoko}{Iom poste}
+    \translate{modernepoko}{Ekzakte!}
+  }
+
+  \variable{unuaDemando}
+}
+

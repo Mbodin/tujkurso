@@ -1,0 +1,39 @@
+
+\code{
+  \declare{pro}
+  \declare{mas}
+  \declare{fem}
+  \declare{sbeg}
+
+  \translate{pro,mas}{il}
+  \translate{pro,fem}{elle}
+  \translate{sbeg,pro,mas}{Il}
+  \translate{sbeg,pro,fem}{Elle}
+
+  \set{A}{Camille}
+}
+
+\paragraph{
+  Endonkudo pri ĝenro.
+}
+
+\paragraph{
+  En tiu ĉi kurso, oni sekvos unu personon kiu nomiĝas Camille.
+  Camille estas
+  \alternative{
+    viro
+    \code{\apply{A}{+mas}},
+    virino
+    \code{\apply{A}{+fem}}
+  }
+}
+
+\example{
+  \variable{A} mange des \alternative{fraises,pommes,poires}.
+  \variable{A,+sbeg,+pro} aime cela.
+}
+
+\paragraph{
+  Facila, ĉu ne?
+}
+
