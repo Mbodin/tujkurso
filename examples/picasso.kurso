@@ -8,28 +8,27 @@
   \declare{mezepoko}
   \declare{modernepoko}
 
-  \set{unuaDemando}{}
+  \set{epoko}{}
 }
 
 \paragraph{
   En kiu epoko li vivis?
-  \alternative{
-    praepoko
-    \code{\apply{unuaDemando}{+praepoko}},
-    mezepoko
-    \code{\apply{unuaDemando}{+mezepoko}},
-    moderna epoko
-    \code{\apply{unuaDemando}{+modernepoko}}
+  \alternative
+    {praepoko
+     \code{\apply{epoko}{+praepoko}}}
+    {mezepoko
+     \code{\apply{epoko}{+mezepoko}}}
+    {moderna epoko
+     \code{\apply{epoko}{+modernepoko}}
   }
 }
 
 \information{
-  \code{
-    \translate{praepoko}{Ho ve, …}
-    \translate{mezepoko}{Iom poste}
-    \translate{modernepoko}{Ekzakte!}
-  }
-
-  \variable{unuaDemando}
+  \match{epoko}
+    {{praepoko} Ho ve, …}
+    {{mezepoko} Iom poste}
+    {{modernepoko} Ekzakte!}
 }
+
+\picture{gernica.png}
 

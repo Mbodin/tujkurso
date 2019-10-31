@@ -20,16 +20,16 @@
 \paragraph{
   En tiu ĉi kurso, oni sekvos unu personon kiu nomiĝas Camille.
   Camille estas
-  \alternative{
-    viro
-    \code{\apply{A}{+mas}},
-    virino
-    \code{\apply{A}{+fem}}
+  \alternative
+    {viro
+     \code{\apply{A}{+mas}}}
+    {virino
+     \code{\apply{A}{+fem}}
   }
 }
 
 \example{
-  \variable{A} mange des \alternative{fraises,pommes,poires}.
+  \variable{A} mange des \alternative{fraises}{pommes}{poires}.
   \variable{A,+sbeg,+pro} aime cela.
 }
 
