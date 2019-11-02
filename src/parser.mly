@@ -19,14 +19,8 @@ content:
   | l = list (item)     { l }
 
 item:
-  | str = string                { Driver.String str }
+  | SPACE                       { Driver.Space }
+  | str = STRING                { Driver.String str }
   | c = COMMAND                 { Driver.Command c }
   | LBRACE; b = content; RBRACE { Driver.Block b }
-
-string:
-  | l = nonempty_list (string_item) { String.concat "" l }
-
-string_item:
-  | SPACE        { " " }
-  | str = STRING { str }
 

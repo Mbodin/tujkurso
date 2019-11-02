@@ -7,5 +7,5 @@ and ast = item list
 
 type state
 
-val parse : ast -> state
+val parse_state : ast -> state
 
