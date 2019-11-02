@@ -27,7 +27,7 @@ let ident = letter (letter | digit | '_')*
 
 rule read = parse
 
-  | newline space*      { next_line lexbuf ; SPACE }
+  | newline             { next_line lexbuf ; SPACE }
   | space+              { SPACE }
   | eof                 { EOF }
 

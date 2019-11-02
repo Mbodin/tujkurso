@@ -8,7 +8,7 @@
 %token         SPACE
 %token         LBRACE RBRACE
 
-%start<??> main
+%start<Driver.ast> main
 
 %%
 
@@ -19,8 +19,14 @@ content:
   | l = list (item)     { l }
 
 item:
-  | list (SPACE)                { String " " }
-  | str = STRING                { String c }
-  | c = COMMAND                 { Command c }
-  | LBRACE; b = content; RBRACE { Block b }
+  | str = string                { Driver.String str }
+  | c = COMMAND                 { Driver.Command c }
+  | LBRACE; b = content; RBRACE { Driver.Block b }
+
+string:
+  | l = nonempty_list (string_item) { String.concat "" l }
+
+string_item:
+  | SPACE        { " " }
+  | str = STRING { str }
 
