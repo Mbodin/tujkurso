@@ -1,0 +1,27 @@
+{
+  "name": "tujkurso",
+  "version": "1.0",
+  "description": "A program to create simple interactive course",
+  "license": "AGPL-3.0-or-later",
+  "esy": {
+    "build": "./build.sh",
+    "buildsInSource": "_build"
+  },
+  "scripts": {
+    "clean": "rm -R _build *.byte *.native *.js",
+    "server": "python -m SimpleHTTPServer"
+  },
+  "dependencies": {
+    "@opam/ocamlfind": "*",
+    "@opam/ocamlbuild": "*",
+    "@opam/extlib": "*",
+    "@opam/menhir": "*",
+    "@opam/ppx_deriving": "*",
+    "@opam/lwt_ppx": "*",
+    "@opam/js_of_ocaml": "*",
+    "@opam/js_of_ocaml-lwt": "*",
+    "@opam/js_of_ocaml-ppx": "*",
+    "@opam/js_of_ocaml-ppx_deriving_json": "*",
+    "ocaml": "~4.7.0"
+  }
+}

@@ -87,7 +87,7 @@ and parse commands strings = function
       Option.bind (parse commands strings l) (fun l ->
         Some (a :: l)))
   | Block b :: l ->
-    Option.bind (parse commands strings b) (b ->
+    Option.bind (parse commands strings b) (fun b ->
       Option.bind (parse commands strings l) (fun l ->
         Some (b @ l)))
   | Command c :: l ->
@@ -99,17 +99,17 @@ and parse commands strings = function
 let todo _ = failwith "TBI" (* TODO *)
 
 let code =
-  Arg_block (Arg_nil (todo _)) (fun _ -> None)
-    (Arg_nil (fun commands -> todo _))
+  Arg_block (Arg_nil (todo ()), (fun _ -> None),
+    Arg_nil (fun commands -> todo ()))
 
 let picture =
-  Arg_cons (fun link -> (todo _)) (Arg_nil (fun link -> (todo _)))
+  Arg_cons ((fun link -> todo ()), Arg_nil (fun link -> todo ()))
 
 let pattern ind =
-  Arg_cons (fun name -> todo _)
-    (Arg_list
-      (Arg_cons (fun case_name -> todo _) (apply ind (fun block case_name -> todo _)))
-      (fun cases -> todo _))
+  Arg_cons ((fun name -> todo ()),
+    Arg_list
+      (Arg_cons ((fun case_name -> todo ()), apply ind (fun block case_name -> todo ())),
+       (fun cases -> todo ())))
 
 let paragraph style =
   let rec ind =
@@ -118,7 +118,7 @@ let paragraph style =
         ("alternative", Arg_list ind) ;
         ("code", code) ;
         ("picture", picture) ;
-      ])) (fun str -> Some (State.String str)) (Arg_nil (fun items -> items)) in
+      ]), (fun str -> Some (State.String str)), Arg_nil (fun items -> items)) in
   apply ind (fun items -> (style, items))
 
 let parse_state =

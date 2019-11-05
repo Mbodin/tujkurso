@@ -1,5 +1,6 @@
 
 type item =
+  | Space
   | String of string
   | Command of string
   | Block of ast

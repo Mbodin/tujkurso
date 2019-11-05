@@ -15,6 +15,9 @@
 # ocamlbuild working directory
 _build/
 
+/_esy
+/node_modules
+
 # ocamlbuild targets
 *.byte
 *.native

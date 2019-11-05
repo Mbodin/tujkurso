@@ -39,5 +39,5 @@ rule read = parse
   | "\\{"               { STRING "{" }
   | "\\}"               { STRING "}" }
 
-  | [^ ' ' '\t' '\n' '\r' '\\' '{' '}' ]*   { STRING c }
+  | [^ ' ' '\t' '\n' '\r' '\\' '{' '}' ]* as c   { STRING c }
 
